@@ -1,0 +1,2 @@
+Baustein;MSRNummer;Kurztext;Langtext;Var Text;Meldung bei 0 (MBIN);Meldung bei 1 (MBIN);;MBA;MBE;DIM;prio1;GW1;leitend1;typ1;Mtext1;prio2;GW2;leitend2;typ2;Mtext2;prio3;GW3;leitend3;typ3;Mtext3;prio4;GW4;leitend4;typ4;Mtext4
+MANA_800;L1211;C-001;Stand Reaktor C-001;Stand Reaktor C-001;12345;12345678;;0.0;100.0;%;;;;;;;;;;;;;;;;;;;;
