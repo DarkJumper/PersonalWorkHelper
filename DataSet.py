@@ -16,7 +16,7 @@ class DataSet:
                     "STD": row[0],
                     "RECORD": {
                         "MN": row[1],
-                        "ST": row[2].ljust(12)[:12],
+                        "KT": row[2].ljust(12)[:12],
                         "LT": row[3].ljust(30)[:30]
                         },
                     "PARADATA": {

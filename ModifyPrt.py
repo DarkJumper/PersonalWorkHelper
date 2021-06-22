@@ -27,7 +27,17 @@ class ModifyPrt:
             elif "[PARA:PARADATA]" in row:
                 self.newfile.append(FreeCom(ParaData, row).modifyString(para_data))
             elif "[MSR:RECORD]" in row:
-                self.newfile.append(FreeCom(MsrRecord, row).modifyString(record_data))
+                if len(row.split(";")[2].split("_")) != 1:
+                    new_name = dict()
+                    ending = row.split(";")[2].split("_")[-1]
+                    new_data = FreeCom(MsrRecord, row).modifyString(record_data)
+                    new_name["MN"] = record_data["MN"] + "_" + ending
+                    new_data = FreeCom(MsrRecord, new_data).modifyString(new_name)
+                else:
+                    new_data = FreeCom(MsrRecord, row).modifyString(record_data)
+                self.newfile.append(new_data)
+            elif "M54321" in row:
+                self.newfile.append(row.replace("M54321", record_data["MN"]))
             elif "54321" in row:
                 if "Variabel" in row:
                     row = row.replace("Variabel", record_data["LT"])
